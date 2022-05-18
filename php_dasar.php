@@ -6,11 +6,15 @@
 </head>
 <body>
  <h1>Belajar PHP Dasar</h1>
-<?php
-	$nim = "312010119";
-	$nama = 'Jose Fisto';
-	echo "NIM : " . $nim . "<br>";
-	echo "Nama : $nama";
-?>
+ <?php
+ echo "Hello World";
+ ?>
+ <h1>Menggunakan Variabel</h1>
+ <?php
+ $nim = "0411500400";
+ $nama = 'Abdullah';
+ echo "NIM : " . $nim . "<br>";
+ echo "Nama : $nama";
+ ?>
 </body>
 </html>
