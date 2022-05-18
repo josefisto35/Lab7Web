@@ -366,9 +366,22 @@ Form input
 </p>
 
 Hasil Form input / Ouput
+
+Jenis pekerjaan IT Support
 <p align="center">
-	<img src="ss/output_form_input.png" alt="">
+	<img src="ss/output_itsupp.png" alt="">
 </p>
+
+Jenis pekerjaan Web Developer
+<p align="center">
+	<img src="ss/output_webdev.png" alt="">
+</p>
+
+Jenis pekerjaan Game Developer
+<p align="center">
+	<img src="ss/output_gamedev.png" alt="">
+</p>
+
 
 Berikut Koding dari hasil di atas :
 
@@ -399,7 +412,7 @@ Koding Form Inputan :
                 <td><input type="date" name="tgllahir"></td>
             </tr>
             <tr>
-                <td>Pekerjaan</td>
+                <td>Jenis Pekerjaan</td>
                     <td><select name="pekerjaan" id="">
                         <option value="">--Pekerjaan Anda--</option>
                         <option value="Rata-rata gaji untuk IT Support adalah Rp 4.000.000 per bulan">IT Support</option>
@@ -461,7 +474,7 @@ File Kedua, isi koding sebagai berikut
         </td>
     </tr>
     <tr>
-        <td>Jenis Pekerjaan</td>
+        <td>Gaji Pekerjaan</td>
         <td>:</td>
         <td><?php echo $_POST['pekerjaan'] ?></td>
     </tr>
