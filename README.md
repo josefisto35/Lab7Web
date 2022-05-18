@@ -352,3 +352,124 @@ Hasil Output
 <p align="center">
 	<img src="ss/ss11.png" alt="">
 </p>
+
+## Pertanyaan dan Tugas
+Buatlah program PHP sederhana dengan menggunakan form input yang menampilkan nama, tanggal lahir dan pekerjaan. Kemudian tampilkan outputnya dengan menghitung umur berdasarkan inputan tanggal lahir. Dan pilihan pekerjaan dengan gaji yang berbeda-beda sesuai pilihan pekerjaan.
+
+Jawaban :
+
+Berikut hasil jawaban dari pertanyaan tersebut :
+
+Form input
+<p align="center">
+	<img src="ss/form_inputan.png" alt="">
+</p>
+
+Hasil Form input / Ouput
+<p align="center">
+	<img src="ss/output_form_input.png" alt="">
+</p>
+
+Berikut Koding dari hasil di atas :
+
+`NOTE` :
+Untuk pembuatan hasil di atas menggunakan 2 file yang pertama untuk form input dan satu untuk memanggil data / menghasilkan output data yang di panggil dari file pertama (File Form inputan)
+
+Koding Form Inputan :
+
+```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input</title>
+</head>
+<body>
+    <form method="POST" action="tampilan.php">
+        <h2>Form Pengisian Data</h2>
+        <table>
+            <tr>
+                <td>Nama</td>
+                <td><input type="text" name="nama" placeholder="Nama Anda"></td>
+            </tr>
+            <tr>
+                <td>Tanggal Lahir</td>
+                <td><input type="date" name="tgllahir"></td>
+            </tr>
+            <tr>
+                <td>Pekerjaan</td>
+                    <td><select name="pekerjaan" id="">
+                        <option value="">--Pekerjaan Anda--</option>
+                        <option value="Rata-rata gaji untuk IT Support adalah Rp 4.000.000 per bulan">IT Support</option>
+                        <option value="Rata-rata gaji untuk Web Developer adalah Rp 4.500.000 per bulan">Web Developer</option>
+                        <option value="Rata-rata gaji untuk game developer sekala pemuka sekitar Rp3,2-5 juta per bulan">Game Developer</option>
+                    </select>
+                    </td>
+            </tr>
+        </table>
+        <br>
+        <td><button type="submit" name="submit" value="submit">Kirim</button></td>
+    </form>
+</body>
+</html>
+```
+Selanjutnya Save dengan nama **program PHP sederhana.php**
+
+File Kedua, isi koding sebagai berikut
+
+```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+</head>
+<body>
+    <table>
+    <h2>Data Anda</h2>
+    <tr>
+        <td>Nama</td>
+        <td>:</td>
+        <td><?php echo $_POST['nama'] ?></td>
+    </tr>
+    <tr>
+        <td>Tanggal Lahir</td>
+        <td>:</td>
+        <td><?php echo $_POST['tgllahir'] ?></td>
+    </tr>
+    <tr>
+        <td>Umur Anda</td>
+        <td>:</td>
+        <td>
+            <?php
+                $tgllahir = new DateTime($_POST['tgllahir']);
+                $sekarang = new DateTime("today");
+                if ($tgllahir > $sekarang) { 
+                $thn = "0";
+                $bln = "0";
+                $tgl = "0";
+                }
+                $thn = $sekarang->diff($tgllahir)->y;
+                $bln = $sekarang->diff($tgllahir)->m;
+                $tgl = $sekarang->diff($tgllahir)->d;
+                echo $thn." tahun ".$bln." bulan ".$tgl." hari";
+            ?>
+        </td>
+    </tr>
+    <tr>
+        <td>Jenis Pekerjaan</td>
+        <td>:</td>
+        <td><?php echo $_POST['pekerjaan'] ?></td>
+    </tr>
+    </table>
+</body>
+</html>
+```
+
+Kemudian Save dengan nama file **tampilan.php**
+
+Selesai
