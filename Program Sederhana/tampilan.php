@@ -39,7 +39,7 @@
         </td>
     </tr>
     <tr>
-        <td>Jenis Pekerjaan</td>
+        <td>Gaji Pekerjaan</td>
         <td>:</td>
         <td><?php echo $_POST['pekerjaan'] ?></td>
     </tr>

@@ -19,7 +19,7 @@
                 <td><input type="date" name="tgllahir"></td>
             </tr>
             <tr>
-                <td>Pekerjaan</td>
+                <td>Jenis Pekerjaan</td>
                     <td><select name="pekerjaan" id="">
                         <option value="">--Pekerjaan Anda--</option>
                         <option value="Rata-rata gaji untuk IT Support adalah Rp 4.000.000 per bulan">IT Support</option>
